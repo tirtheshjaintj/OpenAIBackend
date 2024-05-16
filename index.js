@@ -19,6 +19,11 @@ async function main(prompt) {
     console.log(completion.choices[0].message.content);
     return completion.choices[0].message.content;
 }
+
+app.get('/',(req,res)=>{
+    return res.status(200).send("<h1>Working Nicely</h1>");
+})
+
 app.post('/',[
     body('prompt', 'No Prompt Given').isLength({ min: 3 }),
   ],async (req,res)=>{
