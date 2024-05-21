@@ -55,7 +55,7 @@ async function getGeminiData(prompt) {
 app.get('/', (req, res) => res.status(200).send("<h1>Working Nicely</h1>") );
 
 
-app.post('/openai', [
+app.post('/gpt', [
   body('prompt', 'No Prompt Given').isLength({ min: 3 }),
 ], async (req, res) => {
   const errors = validationResult(req);
